@@ -1,0 +1,11 @@
+.noty_body {
+    left: 0;
+    width: 100%;
+    background-color: green;  /* Background color */
+    color: white;  /* Text color */
+    font-size: 16px;  /* Font size */
+    font-weight: bold;  /* Bold text */
+    border-radius: 8px;  /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  /* Shadow effect */
+    padding: 10px 20px;  /* Padding inside the notification */
+}
