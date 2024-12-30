@@ -49,7 +49,7 @@
         @foreach ($books as $book)
             <div class="col-md-4 mb-4">
                 <div class="card">
-                    <img src="{{ asset('images/' . $book->image) }}" class="card-img-top" alt="Book Image" style="height: 400px;">
+                    <img src="{{ asset('images/' . $book->image) }}" class="card-img-top" alt="Book Image" style="height: 200px; width:150px">
                     <div class="card-body">
                         <h5 class="card-title">
                             <a href="{{ route('books.show', $book->id_book) }}">{{ $book->title }}</a>
