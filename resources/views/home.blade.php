@@ -116,7 +116,8 @@
                                             data-bs-target="#editModal" 
                                             data-book-id="{{ $book->id_book }}" 
                                             data-book-title="{{ $book->title }}" 
-                                            data-book-author="{{ $book->author }}">
+                                            data-book-author="{{ $book->author }}"
+                                            data-book-summary="{{ $book->summary }}">
                                         <i class="bi bi-pencil-fill"></i>
                                     </button>
                                 @endif
