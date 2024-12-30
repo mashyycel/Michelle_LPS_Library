@@ -55,8 +55,25 @@
             </div>
 
             <div class="mb-3">
+                <label for="physical_description" class="form-label">physical description</label>
+                <input type="text" class="form-control" id="physical_description" name="physical_description" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="summary" class="form-label">Summary</label>
+                <input type="text" class="form-control" id="summary" name="summary" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="other_title" class="form-label">Other Title</label>
+                <input type="text" class="form-control" id="other_title" name="other_title" required>
+            </div>
+
+            <div class="mb-3">
                 <label for="book_image" class="form-label">Book Image</label>
-               <input type="file" id="book_image" name="book_image">            </div>
+               <input type="file" id="book_image" name="book_image">            
+            </div>
+
 
             <button type="submit" class="btn btn-primary">Add Book</button>
         </form>

@@ -48,7 +48,7 @@ class CatalogueController extends Controller
         'author' => 'required|string',
         'isbn' => 'required',
         'total_copies' => 'required|integer',
-        'available_copies' => 'required|integer',
+        'available_copies' => 'required|integer'
     ]);
 
     // Check if the book with the same ISBN already exists
@@ -72,6 +72,9 @@ class CatalogueController extends Controller
         $book->published_year = $request->published_year;
         $book->total_copies = $request->total_copies;
         $book->available_copies = $request->available_copies;
+        $book->summary = $request->summary;
+        $book->physical_description = $request->physical_description;
+        $book->other_title = $request->other_title;
 
         // Handle image upload
         if ($request->hasFile('book_image')) {
