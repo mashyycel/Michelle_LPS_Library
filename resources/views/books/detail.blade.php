@@ -1,5 +1,3 @@
-<!-- resources/views/books/detail.blade.php -->
-
 @extends('layouts.app')
 
 @section('content')
@@ -14,10 +12,8 @@
         <div><strong>Genre:</strong> {{ $book->genre }}</div>
         </div>
         <div class="col-md-6 text-end">
-    <!-- Image -->
     <img src="{{ asset('images/' . $book->image) }}" alt="Book Image" width="150" height="200" class="mb-3">
 
-    <!-- Buttons -->
     <div>
         @if(Auth::check() && Auth::user()->user_type == 'staff')
         <button class="btn btn-sm btn-primary mb-2" 

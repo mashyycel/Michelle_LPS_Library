@@ -8,7 +8,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <h2 class="dashboardTableTitle">Books Borrowed</h2>
                 <a href="{{ route('borrowed') }}" class="btn btn-link">
-                <i class="bi bi-box-arrow-up-right"></i> <!-- FontAwesome external link icon -->
+                <i class="bi bi-box-arrow-up-right"></i> 
                 </a>
             </div>
             <table class="table">
@@ -74,7 +74,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <h2 class="dashboardTableTitle">Books List</h2>
                 <a href="{{ route('catalogue') }}" class="btn btn-link">
-                <i class="bi bi-box-arrow-up-right"></i> <!-- FontAwesome external link icon -->
+                <i class="bi bi-box-arrow-up-right"></i> 
                 </a>
             </div>
             <table class="table">
@@ -140,7 +140,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <h2 class="dashboardTableTitle">Overdue Books</h2>
                 <a href="{{ route('overdue') }}" class="btn btn-link">
-                <i class="bi bi-box-arrow-up-right"></i> <!-- FontAwesome external link icon -->
+                <i class="bi bi-box-arrow-up-right"></i> 
                 </a>
             </div>
         <table class="table">

@@ -3,8 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
@@ -13,20 +11,17 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<!-- Noty CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0-beta/noty.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0-beta/themes/metroui.min.css">
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<!-- Noty JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0-beta/noty.min.js"></script>
-<!-- Add this in your <head> section for DataTables CSS -->
-<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+    <!-- Noty CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0-beta/noty.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0-beta/themes/metroui.min.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <!-- Noty JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.2.0-beta/noty.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 
-<!-- Add this at the end of your <body> section for DataTables JS -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
-    <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
@@ -43,12 +38,10 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
 
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
@@ -144,12 +137,9 @@
                 button.addEventListener('click', function () {
                     const checkoutId = this.getAttribute('data-checkout-id');
 
-                    // Populate the hidden input field with the book's id
                     checkoutIdInput.value = checkoutId;
                     returnForm.action = "{{ route('books.return', ':id') }}".replace(':id', checkoutId);
 
-                    // Optionally, you can update the modal title or message dynamically
-                    // document.getElementById('returnModalLabel').textContent = `Return Book #${bookId}`;
                 });
             });
 
@@ -162,12 +152,9 @@
                 button.addEventListener('click', function () {
                     const fineId = this.getAttribute('data-fine-id');
 
-                    // Populate the hidden input field with the book's id
                     fineIdInput.value = fineId;
                     payForm.action = "{{ route('books.pay', ':id') }}".replace(':id', fineId);
 
-                    // Optionally, you can update the modal title or message dynamically
-                    // document.getElementById('returnModalLabel').textContent = `Return Book #${bookId}`;
                 });
             });
 
@@ -187,13 +174,11 @@
                     const bookAuthor = this.getAttribute('data-book-author');
                     const bookSummary = this.getAttribute('data-book-summary');
 
-                    // Populate the form fields in the modal
                     editBookIdInput.value = bookId;
                     editBookTitleInput.value = bookTitle;
                     editBookAuthorInput.value = bookAuthor;
                     editBookSummaryInput.textContent = bookSummary;
 
-                    // Set the form's action URL dynamically
                     editBookForm.action = "{{ route('books.edit', ':id') }}".replace(':id', bookId);
 
                 });
@@ -210,11 +195,9 @@
                     const bookId = this.getAttribute('data-book-id');
                     const bookTitle = this.getAttribute('data-book-title');
 
-                    // Populate the form fields in the modal
                     deleteBookIdInput.value = bookId;
                     deleteBookTitleInput.textContent = bookTitle;
 
-                    // Set the form's action URL dynamically
                     deleteBookForm.action = "{{ route('books.delete', ':id') }}".replace(':id', bookId);
 
                 });
@@ -223,17 +206,17 @@
 
          $(document).ready(function() {
     $('.tableBooks').DataTable({
-        paging: true,  // Enable pagination
-        searching: true,  // Enable search
-        ordering: true,  // Enable sorting
-        order: [[1, 'asc']],  // Default order (2nd column, Borrowed Date, ascending)
+        paging: true,  
+        searching: true,  
+        ordering: true, 
+        order: [[1, 'asc']],  
     });
 
     $(document).ready(function() {
     $('#booksTable').DataTable({
         paging: true,
-         pageLength: 9,           // Enable pagination
-        searching: true,       // Enable search
+         pageLength: 9,          
+        searching: true,       
     });
 });
 
@@ -247,8 +230,8 @@
                 type: 'success',
                 text: '{{ session('success') }}',
                 timeout: 3000,
-                layout: 'top',  // You can change the layout to whatever suits you
-                theme: 'custom',       // Optional: Can customize the theme               
+                layout: 'top',  
+                theme: 'custom',                  
             }).show();
         });
     </script>
@@ -259,8 +242,8 @@
                 type: 'error',
                 text: '{{ session('success') }}',
                 timeout: 3000,
-                layout: 'top',  // You can change the layout to whatever suits you
-                theme: 'custom',       // Optional: Can customize the theme               
+                layout: 'top',  
+                theme: 'custom',          
             }).show();
         });
     </script>

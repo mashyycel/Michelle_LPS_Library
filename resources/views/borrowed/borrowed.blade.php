@@ -64,6 +64,5 @@
 </table>
 </div>
 
-<!-- Modal for Returning a Book -->
 @include('components.return-modal')
 @endsection

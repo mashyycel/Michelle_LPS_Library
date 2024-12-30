@@ -18,16 +18,13 @@
         </h1>
     </div>
 
-    <!-- Start of form on the same row -->
     <div class="col-md-6 ms-auto">
         <form action="{{ route('catalogue') }}" method="GET">
             <div class="row ms-auto">
-                <!-- Combined Title and Author Search -->
                 <div class="col-md-7 ms-auto d-flex">
                     <input type="text" class="form-control" name="search" placeholder="Search by Title or Author" value="{{ request('search') }}">
                 </div>
 
-                <!-- Status Filter -->
                 <div class="col-md-3 ms-auto" style="margin-left: -15px;">
                     <select class="form-control" name="status">
                         <option value="Available" {{ request('status') == 'Available' ? 'selected' : '' }}>Available</option>
@@ -35,7 +32,6 @@
                     </select>
                 </div>
 
-                <!-- Apply Filter and Clear Filter Buttons -->
                 <div class="col-md-2 ms-auto d-flex justify-content-end">
                     <button type="submit" class="btn btn-primary">Filter</button>
                     <a href="{{ route('catalogue') }}" class="btn btn-secondary ms-2">Clear</a>
@@ -84,11 +80,6 @@
     <div class="pagination-wrapper mt-3">
         {{ $books->links('vendor.pagination.bootstrap-5') }}
     </div>
-
-
-
-
-    <!-- Borrow Confirmation Modal -->
     @include('components.borrow-modal')
 
 @endsection
